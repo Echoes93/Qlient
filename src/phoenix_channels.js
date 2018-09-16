@@ -7,7 +7,8 @@ socket.onError( () => console.log("there was an error with the connection!") )
 socket.onClose( () => console.log("the connection dropped") )
 
 const channel = socket.channel('records');
-channel.on("new_value", msg => store.dispatch(ACTION_CREATORS.newValue(msg)));
-channel.join().receive("ok", records => store.dispatch(ACTION_CREATORS.gotRecords(records)));
+channel.on("new_value", response => store.dispatch(ACTION_CREATORS.newValue(response.data)));
+channel.on("record_deleted", response => store.dispatch(ACTION_CREATORS.recordDeleted(response.key)));
+channel.join().receive("ok", response => store.dispatch(ACTION_CREATORS.gotRecords(response.data)));
 
 export default channel;
