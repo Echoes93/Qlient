@@ -1,7 +1,7 @@
 import { Socket } from 'phoenix';
 import { store, ACTION_CREATORS } from './state_store';
 
-const socket = new Socket('ws://localhost:4000/socket', {})
+const socket = new Socket('wss://q-phx-server.herokuapp.com/socket', {})
 socket.connect()
 socket.onError( () => console.log("there was an error with the connection!") )
 socket.onClose( () => console.log("the connection dropped") )
