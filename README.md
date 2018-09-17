@@ -3,8 +3,8 @@
 - ~~Functioning application~~
 - ~~Styling~~
 - ~~Remove/Update records~~
-- Deploy to Heroku
-- Readme
+- ~~Deploy to Heroku~~
+- Readme + Docs
 - CSS Refactoring
 - Any other refactoring
 
